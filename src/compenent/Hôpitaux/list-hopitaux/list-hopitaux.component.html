@@ -1,0 +1,41 @@
+
+<div class="card my-5">
+  <div class="card-body">
+    <h1 style="text-align: center"> Liste des hopitaux </h1>
+    <button class="btn-secondary " type="button" routerLink="" ><< Retour</button>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Localisation </th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hopital of hopiteaux">
+
+        <td>{{hopital.nom}}</td>
+        <td>{{hopital.localisation}}</td>
+        <td><li class="list-inline-item">
+          <button class="btn-success" (click)="delete(hopital)"> Supprimer</button>
+          &#160;
+          <a href="updateHopital/{{hopital.id}}">
+            <button type="button"  class="btn-warning">Modifier</button>
+          </a>
+
+        </li>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+<div style="text-align: right">
+    <button  type="button"  class="btn-primary btn-lg" routerLink="/manageHopital">Ajouter </button>
+</div>
+
+  </div>
+
+</div>

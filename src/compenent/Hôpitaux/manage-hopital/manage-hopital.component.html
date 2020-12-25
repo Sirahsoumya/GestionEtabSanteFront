@@ -1,0 +1,33 @@
+<div class="card">
+
+  <div class="card-header">
+
+    <div class="card my-5">
+      <div class="card-body">
+        <h3 style="text-align:center">Hopital</h3>
+        <form (ngSubmit)="onSubmitHopital()">
+          <div class="form-group">
+            <label for="nom">Nom </label>
+            <input type="text" [(ngModel)]="hopital.nom"
+                   class="form-control"
+                   id="nom"
+                   name="nom"
+                   placeholder="nom">
+          </div>
+          <div class="form-group">
+            <label for="local">Localisation </label>
+            <input type="text" [(ngModel)]="hopital.localisation"
+                   class="form-control"
+                   id="local"
+                   name="local"
+                   placeholder="localalisation">
+          </div>
+          <button type="submit" class="btn-primary">Ajouter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

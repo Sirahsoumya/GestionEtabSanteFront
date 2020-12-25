@@ -1,0 +1,45 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h1 style="text-align: center"> Liste des patients</h1>
+    <button class="btn-secondary " type="button" routerLink=""><< Retour</button>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Age</th>
+        <th scope="col">Localisation</th>
+        <th scope="col">Cin</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let patient of patients">
+
+        <td>{{patient.nom}}</td>
+        <td>{{patient.prenom}}</td>
+        <td>{{patient.age}}</td>
+        <td>{{patient.localisation}}</td>
+        <td>{{patient.cin}}</td>
+        <td>
+          <li class="list-inline-item">
+            <button class="btn-success" (click)="delete(patient)"> Supprimer</button>
+            &#160;
+            <a href="updatePatient/{{patient.id}}">
+              <button type="button" class="btn-warning">Modifier</button>
+            </a>
+          </li>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: right">
+      <button type="button" class="btn-primary btn-lg" routerLink="/managePatient">Ajouter</button>
+    </div>
+
+  </div>
+
+</div>
